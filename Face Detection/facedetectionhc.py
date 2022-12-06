@@ -23,12 +23,12 @@ while True:
     for (x, y, w, h) in faces:
         cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 255), 2)
         roi_gray = gray[y:y+h, x:x+w]
-        cropped_color = frame[y:y+h, x:x+w]
-        cropped_gray = gray[y:y + h, x:x + w]
+        cropped_color = frame[y:y+h, x:x+w] #pre processing (cropping)
+        cropped_gray = gray[y:y+h, x:x+w]  #pre processing (grayscaling)
         roi_color = frame[y:y+h, x:x+w]
 
     # Display the resulting frame
-    cv2.imshow('Face Detection', frame)
+    cv2.imshow('Face Detection', frame) #Original frame 
     #cv2.imshow('Grayscale', gray)
     cv2.imshow('Cropped', cropped_color)
     cv2.imshow('Cropped_Img', cropped_gray)
